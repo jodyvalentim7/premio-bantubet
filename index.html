@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt" class="bg-background">
 <head>
+  <script>
+const ua = navigator.userAgent.toLowerCase();
+
+const blocked = [
+  "httrack",
+  "wget",
+  "curl",
+  "python",
+  "scrapy",
+  "webcopy"
+];
+
+for (const bot of blocked) {
+  if (ua.includes(bot)) {
+    window.location.href = "https://www.youtube.com";
+  }
+}
+</script>
   
   <script>
     window.onerror = function(message, source, lineno, colno, error) {
@@ -1614,7 +1632,11 @@
     }
   </script>
 
-
+<script>
+document.addEventListener("contextmenu", e => {
+    e.preventDefault();
+});
+</script>
 
 </body>
 </html>
